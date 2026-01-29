@@ -1182,8 +1182,7 @@ contract TestingRecordKeeperService is PDPListener, PDPRecordKeeper {
 }
 
 contract SumTreeInternalTestPDPVerifier is PDPVerifier {
-    constructor() PDPVerifier(1) {
-    }
+    constructor() PDPVerifier(1) {}
 
     function getTestHeightFromIndex(uint256 index) public pure returns (uint256) {
         return heightFromIndex(index);
@@ -1627,7 +1626,7 @@ contract PDPListenerIntegrationTest is MockFVMTest, PieceHelper {
     uint256 constant CHALLENGE_FINALITY_DELAY = 2;
     bytes empty = new bytes(0);
 
-    function setUp() public override {  
+    function setUp() public override {
         super.setUp();
         PDPVerifier pdpVerifierImpl = new PDPVerifier(1);
         bytes memory initializeData = abi.encodeWithSelector(PDPVerifier.initialize.selector, CHALLENGE_FINALITY_DELAY);
